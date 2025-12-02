@@ -37,7 +37,7 @@ Claude Codeのサブエージェントを活用した**評価者駆動型開発�
 
 ![catchup-feed](./assets/catchup-feed-logo.webp)
 
-Go + Clean Architectureで構築した技術記事RSS管理ツール。並行処理による高速フィード取得を実現し、AIで翻訳・要約してSlackへ配信。
+Go + Clean Architectureで構築した技術記事RSS管理ツール。並行処理による高速フィード取得を実現し、AIで翻訳・要約してSlack・Discordへ配信。（現在Next.jsでフロント作成中）
 
 ### [cat_salvages_the_relationship](https://github.com/Tsuchiya2/cat_salvages_the_relationship)
 
