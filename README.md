@@ -32,6 +32,7 @@ AIを活用した開発フローの研究に取り組んでいます。
 
 Claude Codeのサブエージェントを活用した**評価者駆動型開発フレームワーク**。タスクの自動評価・改善サイクルを実装し、32個のエージェントが協調動作。Rails 6.1→8.1アップグレードを約1.5時間で完了した実績あり。
 
+📝 [EDAFの解説記事（Qiita）](https://qiita.com/Tsuchiya2/items/013a467c07286c6732f5)
 
 ### [catchup-feed](https://github.com/Tsuchiya2/catchup-feed)
 
