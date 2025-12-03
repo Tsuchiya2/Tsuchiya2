@@ -26,7 +26,7 @@ AIを活用した開発フローの研究に取り組んでいます。
 
 ## 🔥 Featured Projects
 
-### [EDAF - Evaluator-Driven Agent Flow](https://github.com/Tsuchiya2/edaf-rails-upgrade-demo)
+### [EDAF - Evaluator-Driven Agent Flow](https://github.com/Tsuchiya2/evaluator-driven-agent-flow)
 
 ![EDAF](./assets/edaf-logo.webp)
 
