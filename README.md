@@ -1,8 +1,12 @@
 # Hi there 👋
-
 **Rails Engineer / AI-Driven Development Researcher**
 
-AIを活用した開発フローの研究に取り組んでいます。
+Railsエンジニア（2022年〜）。プログラミングスクールで数百名が利用する決済システム開発、業務委託講師22名のマネジメント、カリキュラム改善を担当。AIを活用した開発フローの研究にも取り組んでいます。
+
+## 💼 Experience Highlights
+- **決済機能開発**: 数百名規模のユーザーが利用する決済システムを設計・実装
+- **教育カリキュラム改善**: ドロップアウト率の低減に貢献する施策を企画・実行
+- **チームマネジメント**: 契約講師22名の採用・育成・業務管理を担当
 
 ## 🛠 Tech Stack
 
@@ -38,18 +42,19 @@ Claude Codeのサブエージェントを活用した**評価者駆動型開発�
 
 ![catchup-feed](./assets/catchup-feed-logo.webp)
 
-Go + Clean Architectureで構築した技術記事RSS管理ツール。並行処理による高速フィード取得を実現し、AIで翻訳・要約してSlack・Discordへ配信。（現在Next.jsでフロント作成中）
+Go + Clean Architectureで構築した技術記事RSS管理ツール。並行処理による高速フィード取得を実現し、AIで翻訳・要約してSlack・Discordへ配信。[Next.js + TypeScriptでフロントエンド](https://github.com/Tsuchiya2/catchup-feed-front)を[デプロイ済み](https://pulse.catchup-feed.com/)。
+
+## 📦 Other Projects
 
 ### [cat_salvages_the_relationship](https://github.com/Tsuchiya2/cat_salvages_the_relationship)
 
 ![cat_salvages_the_relationship](./assets/cat_salvages_the_relationship-logo.webp)
 
-コロナ禍で連絡が途切れがちな関係性を維持するためのLINE Bot。グループチャンネルに交流のきっかけとなる投稿を自動配信。（2021年リリース）
+コロナ禍で連絡が途切れがちな関係性を維持するためのLINE Bot。グループチャンネルに交流のきっかけとなる投稿を自動配信。
+
+`Ruby on Rails 8` `LINE Messaging API`（2021年リリース）
 
 ## 🔗 Links
 
 [![Qiita](https://img.shields.io/badge/-Qiita-55C500?style=flat&logo=qiita&logoColor=white)](https://qiita.com/Tsuchiya2)
-
-## 📜 Certification
-
-- Ruby Association Certified Ruby Programmer Silver Version 3
+[![X](https://img.shields.io/badge/-X-000000?style=flat&logo=x&logoColor=white)](https://x.com/Tsuchiya2_)
