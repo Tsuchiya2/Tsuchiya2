@@ -38,9 +38,9 @@ Claude Codeのサブエージェントを活用した**評価者駆動型開発�
 
 📝 [EDAFの解説記事（Qiita）](https://qiita.com/Tsuchiya2/items/013a467c07286c6732f5)
 
-### [catchup-feed](https://github.com/Tsuchiya2/catchup-feed)
+### [catchup-feed-backend](https://github.com/Tsuchiya2/catchup-feed-backend)
 
-![catchup-feed](./assets/catchup-feed-logo.webp)
+![catchup-feed-backend](./assets/catchup-feed-logo.webp)
 
 Go + Clean Architectureで構築した技術記事RSS管理ツール。並行処理による高速フィード取得を実現し、AIで翻訳・要約してSlack・Discordへ配信。[Next.js + TypeScriptでフロントエンド](https://github.com/Tsuchiya2/catchup-feed-front)を[デプロイ済み](https://pulse.catchup-feed.com/)。
 
