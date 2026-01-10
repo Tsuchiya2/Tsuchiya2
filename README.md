@@ -1,14 +1,14 @@
 # Hi there 👋
-**Rails Engineer / AI-Driven Development Researcher**
+**Rails Engineer / AI-Driven Development Enthusiast**
 
-## 💼 Experience Highlights
-- **決済機能開発**: 数百名規模のユーザーが利用する決済システムを設計・実装
-- **教育カリキュラム改善**: ドロップアウト率の低減に貢献する施策を企画・実行
-- **チームマネジメント**: 契約講師22名の採用・育成・業務管理を担当
+## 🎯 Current Focus
+- Claude Codeを活用したAI駆動開発の探求
+- Go + Clean Architectureでのバックエンド設計
+- LLMを組み込んだ開発ワークフローの効率化
 
 ## 🛠 Tech Stack
 
-**Main**（実務・コードレビュー・個人開発）
+**Main**
 
 ![Ruby](https://img.shields.io/badge/-Ruby-CC342D?style=flat&logo=ruby&logoColor=white)
 ![Rails](https://img.shields.io/badge/-Rails-CC0000?style=flat&logo=rubyonrails&logoColor=white)
@@ -19,12 +19,10 @@
 ![Next.js](https://img.shields.io/badge/-Next.js-000000?style=flat&logo=next.js&logoColor=white)
 ![Raspberry Pi](https://img.shields.io/badge/-Raspberry%20Pi-A22846?style=flat&logo=raspberrypi&logoColor=white)
 
-**Sub**（技術検証・ドキュメント作成）
+**Exploring**
 
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white)
 ![Django](https://img.shields.io/badge/-Django-092E20?style=flat&logo=django&logoColor=white)
-![PHP](https://img.shields.io/badge/-PHP-777BB4?style=flat&logo=php&logoColor=white)
-![Laravel](https://img.shields.io/badge/-Laravel-FF2D20?style=flat&logo=laravel&logoColor=white)
 
 ## 🔥 Featured Projects
 
@@ -32,7 +30,7 @@
 
 ![EDAF](./assets/edaf-logo.webp)
 
-Claude Codeのサブエージェントを活用した**評価者駆動型開発フレームワーク**。タスクの自動評価・改善サイクルを実装し、32個のエージェントが協調動作。Rails 6.1→8.1アップグレードを約1.5時間で完了した実績あり。
+Claude Codeのサブエージェントを活用した**評価者駆動型開発フレームワーク**。タスクの自動評価・改善サイクルを実装し、32個のエージェントが協調動作。Rails 6.1→8.1アップグレードを約1.5時間で完了。
 
 📝 [EDAFの解説記事（Qiita）](https://qiita.com/Tsuchiya2/items/013a467c07286c6732f5)
 
@@ -40,7 +38,7 @@ Claude Codeのサブエージェントを活用した**評価者駆動型開発�
 
 ![catchup-feed-backend](./assets/catchup-feed-logo.webp)
 
-Go + Clean Architectureで構築した技術記事RSS管理ツール。並行処理による高速フィード取得を実現し、AIで翻訳・要約してSlack・Discordへ配信。[Next.js + TypeScriptでフロントエンド](https://github.com/Tsuchiya2/catchup-feed-front)を[デプロイ済み](https://pulse.catchup-feed.com/)。
+Go + Clean Architectureで構築した技術記事RSS管理ツール。並行処理による高速フィード取得を実現し、AIで翻訳・要約してSlack・Discordへ配信。[フロントエンド](https://github.com/Tsuchiya2/catchup-feed-front)（Next.js + TypeScript）は[デプロイ済み](https://pulse.catchup-feed.com/)。
 
 ## 📦 Other Projects
 
@@ -48,9 +46,9 @@ Go + Clean Architectureで構築した技術記事RSS管理ツール。並行処
 
 ![cat_salvages_the_relationship](./assets/cat_salvages_the_relationship-logo.webp)
 
-コロナ禍で連絡が途切れがちな関係性を維持するためのLINE Bot。グループチャンネルに交流のきっかけとなる投稿を自動配信。
+コロナ禍で連絡が途切れがちな関係性を維持するためのLINE Bot。グループに交流のきっかけを自動配信。
 
-`Ruby on Rails 8` `LINE Messaging API`（2021年リリース）
+`Ruby on Rails 8` `LINE Messaging API`
 
 ## 🔗 Links
 
