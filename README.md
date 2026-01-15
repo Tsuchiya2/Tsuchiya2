@@ -26,6 +26,12 @@
 
 ## 🔥 Featured Projects
 
+### [catchup-feed-backend](https://github.com/Tsuchiya2/catchup-feed-backend)
+
+![catchup-feed-backend](./assets/catchup-feed-logo.webp)
+
+Go + Clean Architectureで構築した技術記事RSS管理ツール。並行処理による高速フィード取得を実現し、AIで翻訳・要約してSlack・Discordへ配信。[フロントエンド](https://github.com/Tsuchiya2/catchup-feed-front)（Next.js + TypeScript）は[デプロイ済み](https://pulse.catchup-feed.com/)。
+
 ### [EDAF - Evaluator-Driven Agent Flow](https://github.com/Tsuchiya2/evaluator-driven-agent-flow)
 
 ![EDAF](./assets/edaf-logo.webp)
@@ -33,12 +39,6 @@
 Claude Codeのサブエージェントを活用した**評価者駆動型開発フレームワーク**。タスクの自動評価・改善サイクルを実装し、32個のエージェントが協調動作。Rails 6.1→8.1アップグレードを約1.5時間で完了。
 
 📝 [EDAFの解説記事（Qiita）](https://qiita.com/Tsuchiya2/items/013a467c07286c6732f5)
-
-### [catchup-feed-backend](https://github.com/Tsuchiya2/catchup-feed-backend)
-
-![catchup-feed-backend](./assets/catchup-feed-logo.webp)
-
-Go + Clean Architectureで構築した技術記事RSS管理ツール。並行処理による高速フィード取得を実現し、AIで翻訳・要約してSlack・Discordへ配信。[フロントエンド](https://github.com/Tsuchiya2/catchup-feed-front)（Next.js + TypeScript）は[デプロイ済み](https://pulse.catchup-feed.com/)。
 
 ## 📦 Other Projects
 
