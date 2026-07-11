@@ -4,9 +4,7 @@
 
 ## About Me
 
-営業職9年を経てエンジニアに転身し、現在はRuby on Railsを中心としたバックエンド開発に従事（2022年4月〜）。
 
-ビジネスサイドとの要件定義から設計・実装・運用まで一貫対応できることが強みです。業務では外部決済企業のエンジニアと連携し、決済機能を実装主担当しました。個人開発ではGo + Clean ArchitectureやAI/LLM活用に取り組み、**実際に稼働するサービス**を複数リリース。開発したcatchup-feedやEDAFは社内でも活用されています。
 
 ## Tech Stack
 
@@ -15,6 +13,7 @@
 ![Ruby](https://img.shields.io/badge/-Ruby-CC342D?style=flat&logo=ruby&logoColor=white)
 ![Rails](https://img.shields.io/badge/-Rails-CC0000?style=flat&logo=rubyonrails&logoColor=white)
 ![Go](https://img.shields.io/badge/-Go-00ADD8?style=flat&logo=go&logoColor=white)
+![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-336791?style=flat&logo=postgresql&logoColor=white)
 ![MySQL](https://img.shields.io/badge/-MySQL-4479A1?style=flat&logo=mysql&logoColor=white)
 
@@ -29,12 +28,16 @@
 ![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat&logo=docker&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/-GitHub%20Actions-2088FF?style=flat&logo=githubactions&logoColor=white)
 ![Cloudflare](https://img.shields.io/badge/-Cloudflare-F38020?style=flat&logo=cloudflare&logoColor=white)
+![Tailscale](https://img.shields.io/badge/-Tailscale-242424?style=flat&logo=tailscale&logoColor=white)
 ![Raspberry Pi](https://img.shields.io/badge/-Raspberry%20Pi-A22846?style=flat&logo=raspberrypi&logoColor=white)
 
 **AI / LLM**
 
 ![Claude](https://img.shields.io/badge/-Claude-191919?style=flat&logo=anthropic&logoColor=white)
-![OpenAI](https://img.shields.io/badge/-OpenAI-412991?style=flat&logo=openai&logoColor=white)
+![Gemini](https://img.shields.io/badge/-Gemini-8E75B2?style=flat&logo=googlegemini&logoColor=white)
+![Ollama](https://img.shields.io/badge/-Ollama-000000?style=flat&logo=ollama&logoColor=white)
+![Groq](https://img.shields.io/badge/-Groq-F55036?style=flat)
+![VOICEVOX](https://img.shields.io/badge/-VOICEVOX-41C9B4?style=flat)
 
 ---
 
