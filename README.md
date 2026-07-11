@@ -43,7 +43,48 @@
 
 ## Featured Projects
 
-### 1. [EDAF - Evaluator-Driven Agent Flow](https://github.com/Tsuchiya2/evaluator-driven-agent-flow)
+### 1. [Catchup Feed](https://github.com/Tsuchiya2/catchup-feed-backend)
+
+![catchup-feed](./assets/catchup-feed-logo.webp)
+
+**技術情報を毎朝10〜15分のラジオ番組に自動変換して届けるパーソナルポッドキャストシステム（実稼働中）**
+
+RSS・YouTube・ポッドキャストから技術情報を自動収集し、LLMで要約 → 台本生成 → VOICEVOXで音声合成した番組を、毎朝ポッドキャストアプリに配信するシステム。「配信された記事数」ではなく**理解の定着**を最適化目標に据え、育児等で手と目が塞がる細切れ時間でも耳から消化できる形に再設計しました。クイズ生成とspaced repetitionによる学習ループも音声に注入しています。
+
+| 項目 | 内容 |
+|------|------|
+| **バックエンド** | Go 1.26（単一モジュール、server / worker / radio の3バイナリ構成） |
+| **フロントエンド** | Next.js 16 + TypeScript (Strict) + TanStack Query（PWAダッシュボード） |
+| **AI / 音声** | 要約: Gemini → Groq → Ollama フォールバック連鎖 / TTS: VOICEVOX / 文字起こし: faster-whisper |
+| **インフラ** | Raspberry Pi 5 + M3 Mac（夜間バッチ）+ Cloudflare Tunnel + Tailscale + Vercel |
+| **ダッシュボード** | [pulse.catchup-feed.com](https://pulse.catchup-feed.com) |
+
+**技術的なポイント:**
+
+*アーキテクチャ:*
+- 単一ユーザーに右サイズした設計（初期版のマイクロサービス・gRPC・Prometheus を意図的に撤去し約3.8万行を削減）
+- 縮退許容設計 — 「壊れない」より「壊れても翌日勝手に戻る」（Mac不在→エピソード欠番、無料API全滅→ローカルLLM、TTS障害→当日スキップ）
+- 固定費ゼロ運用 — LLMは無料枠→ローカルのフォールバック、ホスティングは自宅Pi 5 + Cloudflare Tunnel
+- プライバシー分界 — クラウドAPIに流すのは公開記事のみ、書籍・私的データはローカルLLM（Ollama）に限定
+
+*バックエンド:*
+- RSS / YouTube / ポッドキャストのマルチモーダル取り込み + 書籍PDFのRAG取り込み（Python）
+- 理解定着の学習ループ — 放送記事からクイズを自動生成し、spaced repetition（3段ラダー）で復習を翌朝の番組に注入
+- トークン認証付きプライベートRSS配信（友人への限定配信、平文トークン非保存・404統一応答）
+- セキュリティ実装 — HttpOnly Cookie JWT・SSRF防御・XFF詐称対策のレート制限
+
+*フロントエンド:*
+- OpenAPI仕様からの型自動生成によるEnd-to-End型安全性
+- ソース管理・友人/トークン管理・アクセスログ・学習トラッカーのPWAダッシュボード
+
+*開発プロセス:*
+- Claude Codeのマルチエージェントオーケストレーション（親がタスク分解・裁定、実装エージェントとレビューエージェントを分離）で開発
+
+📦 [フロントエンド リポジトリ](https://github.com/Tsuchiya2/catchup-feed-frontend)
+
+---
+
+### 2. [EDAF - Evaluator-Driven Agent Flow](https://github.com/Tsuchiya2/evaluator-driven-agent-flow)
 
 ![EDAF](./assets/edaf-logo.webp)
 
@@ -66,43 +107,6 @@ Claude Codeのサブエージェント機能を活用し、**9つの専門エー
 
 📝 [EDAFの解説記事（Qiita）](https://qiita.com/Tsuchiya2/items/013a467c07286c6732f5)
 📝 [EDAFでRails 6.1→8.1アップグレード実践記事（Qiita）](https://qiita.com/Tsuchiya2/items/f99f181d998bbbacb4c2)
-
----
-
-### 2. [Catchup Feed](https://github.com/Tsuchiya2/catchup-feed-backend)
-
-![catchup-feed](./assets/catchup-feed-logo.webp)
-
-**AI要約機能を備えたRSS/Atomフィードリーダー（実稼働中）**
-
-技術記事を自動収集し、Claude/OpenAI APIで要約を生成してSlack・Discordへ配信するシステム。バックエンドとフロントエンドを分離したマイクロサービスアーキテクチャで設計し、Raspberry Pi 5で本番運用しています。
-
-| 項目 | 内容 |
-|------|------|
-| **バックエンド** | Go 1.25 + Clean Architecture |
-| **フロントエンド** | Next.js 16 + TypeScript (Strict) + TanStack Query |
-| **AI** | Claude Sonnet 4.5 / OpenAI GPT-4o-mini |
-| **インフラ** | Raspberry Pi 5 + Cloudflare Tunnel + Vercel |
-| **本番URL** | [pulse.catchup-feed.com](https://pulse.catchup-feed.com) |
-
-**技術的なポイント:**
-
-*バックエンド:*
-- Clean Architectureによる依存性逆転・テスタビリティの確保
-- 並行処理（goroutine）による高速フィード取得
-- サーキットブレーカー・レート制限による耐障害性設計
-- Prometheusメトリクス・構造化ロギングによる可観測性
-
-*フロントエンド:*
-- OpenAPI仕様からの型自動生成によるEnd-to-End型安全性
-- Server Components + TanStack Queryによる最適なデータフェッチ
-- Vitest + Playwrightによるユニット・E2Eテスト
-
-*インフラ:*
-- Cloudflare Tunnelによるポート開放なしのセキュア公開
-- GitHub Actionsによる自動テスト・デプロイ
-
-📦 [フロントエンド リポジトリ](https://github.com/Tsuchiya2/catchup-feed-frontend)
 
 ---
 
