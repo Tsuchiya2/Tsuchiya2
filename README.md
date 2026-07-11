@@ -1,10 +1,14 @@
 # Tsuchiya Yuji
 
-**Backend Engineer | AI-Driven Development | Go / Ruby on Rails**
+**Backend Engineer | AI-Driven Development | Ruby on Rails / Go**
 
 ## About Me
 
+Ruby on Rails を軸にしたバックエンドエンジニアです。
 
+何かを作るとき、指標を取り違えないことを大事にしています。
+Catchup Feed は技術記事のキャッチアップ用ですが、最適化したいのは「配信した記事数」ではなく「理解が定着したか」。そのために記事をラジオ番組に変換して、手が塞がる時間でも耳から入る形にしました。
+目的から逆算して、要らない複雑さは削る——そういう設計が好きです。
 
 ## Tech Stack
 
