@@ -126,7 +126,7 @@ Claude Codeのサブエージェント機能を活用し、**9つの専門エー
 |------|------|
 | **技術** | Ruby 4.0.5 + Rails 8.1.3 + MySQL 8.0 |
 | **連携** | LINE Messaging API |
-| **テスト** | RSpec + Selenium（88%カバレッジ） |
+| **テスト** | RSpec + Selenium（100%カバレッジ） |
 | **フロント** | Hotwire (Turbo + Stimulus) + Bootstrap 5 |
 
 **技術的なポイント:**
