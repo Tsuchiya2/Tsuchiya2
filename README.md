@@ -63,6 +63,16 @@ RSS・YouTube・ポッドキャストから技術情報を自動収集し、LLM�
 | **インフラ** | Raspberry Pi 5 + M3 Mac(夜間バッチ)+ Cloudflare Tunnel + Tailscale + Vercel |
 | **ダッシュボード** | [pulse.catchup-feed.com](https://pulse.catchup-feed.com)(要ログイン) |
 
+**画面イメージ:**
+
+毎朝の番組で出題されたクイズを、ダッシュボードで振り返る学習ループ(Review):
+
+![学習ループのデモ(タップで答えを表示)](./assets/catchup-feed-review.gif)
+
+| ソース管理(RSS / YouTube / Podcast) | 学習トラッカー(spaced repetition) |
+|---|---|
+| ![ソース管理画面](./assets/catchup-feed-sources.png) | ![学習トラッカー画面](./assets/catchup-feed-tracker.png) |
+
 **技術的なポイント:**
 
 *アーキテクチャ:*
