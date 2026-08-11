@@ -63,6 +63,12 @@ RSS・YouTube・ポッドキャストから技術情報を自動収集し、LLM�
 | **インフラ** | Raspberry Pi 5 + M3 Mac(夜間バッチ)+ Cloudflare Tunnel + Tailscale + Vercel |
 | **ダッシュボード** | [pulse.catchup-feed.com](https://pulse.catchup-feed.com)(要ログイン) |
 
+**システム全体像:**
+
+RSS / YouTube / ポッドキャスト等から収集した情報を、要約・台本生成を経てラジオ番組に変換し配信するまでの流れ:
+
+![Catchup Feedの処理フロー(情報収集 → AI処理 → 音声生成 → 配信・視聴)](./assets/catchup-feed-overview.webp)
+
 **画面イメージ:**
 
 毎朝の番組で出題されたクイズを、ダッシュボードで振り返る学習ループ(Review):
