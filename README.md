@@ -135,9 +135,11 @@ Claude Codeのサブエージェント機能を活用し、**9つの専門エー
 
 ### 3. [ReLINE - 猫メッセンジャーBot](https://github.com/Tsuchiya2/cat_salvages_the_relationship)
 
-![ReLINE](./assets/cat_salvages_the_relationship-logo.webp)
+![ReLINE](./assets/reline-logo.webp)
 
 **休眠グループチャットを活性化するLINE Bot**
+
+![ReLINEの全体像(主な機能 / 休眠検知 → きっかけ配信 → 会話再開 → 効果可視化のフロー / Railsバックエンドのアーキテクチャ / 技術スタック)](./assets/reline-overview.webp)
 
 コロナ禍で連絡が途切れがちなグループに、かわいい猫のマスコットが会話のきっかけを自動配信。LINE Messaging APIを活用したイベント駆動アーキテクチャで実装しました。
 
