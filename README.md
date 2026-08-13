@@ -6,10 +6,6 @@
 
 Ruby on Rails を軸にしたバックエンドエンジニアです。本業で Rails バックエンド開発(5年目)、副業では10年以上稼働のレガシー Rails(Ruby 2.4 / Rails 5.1 → 4.0 / 8.1)のモダン化を主担当しています。以下の Featured Projects は個人開発です。
 
-何かを作るとき、指標を取り違えないことを大事にしています。
-Catchup Feed は技術記事のキャッチアップ用ですが、最適化したいのは「配信した記事数」ではなく「理解が定着したか」。そのために記事をラジオ番組に変換して、手が塞がる時間でも耳から入る形にしました。
-目的から逆算して、要らない複雑さは削る——そういう設計が好きです。
-
 ## Tech Stack
 
 **Backend**
@@ -71,13 +67,13 @@ RSS / YouTube / ポッドキャスト等から収集した情報を、要約・�
 
 **画面イメージ:**
 
-毎朝の番組で出題されたクイズを、ダッシュボードで振り返る学習ループ(Review):
+毎朝生成された番組が、購読中のポッドキャストアプリに自動で届きます(手と目が塞がる時間でも耳だけで消化できる形):
 
-![学習ループのデモ(タップで答えを表示)](./assets/catchup-feed-review.gif)
+![ポッドキャストアプリでの受信画面(画像はAntennaPod)](./assets/catchup-feed-radio.gif)
 
-| ソース管理(RSS / YouTube / Podcast) | 学習トラッカー(spaced repetition) |
-|---|---|
-| ![ソース管理画面](./assets/catchup-feed-sources.png) | ![学習トラッカー画面](./assets/catchup-feed-tracker.png) |
+| ソース管理(RSS / YouTube / Podcast) | 学習トラッカー(spaced repetition) | 学習ループのデモ(タップで答えを表示) |
+|---|---|---|
+| ![ソース管理画面](./assets/catchup-feed-sources.png) | ![学習トラッカー画面](./assets/catchup-feed-tracker.png) | ![学習ループのデモ(タップで答えを表示)](./assets/catchup-feed-review.gif) |
 
 **技術的なポイント:**
 
