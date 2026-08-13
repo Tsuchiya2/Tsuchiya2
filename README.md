@@ -71,9 +71,9 @@ RSS / YouTube / ポッドキャスト等から収集した情報を、要約・�
 
 ![ポッドキャストアプリでの受信画面(画像はAntennaPod)](./assets/catchup-feed-radio.gif)
 
-| ソース管理(RSS / YouTube / Podcast) | 学習トラッカー(spaced repetition) | 学習ループのデモ(タップで答えを表示) |
-|---|---|---|
-| ![ソース管理画面](./assets/catchup-feed-sources.png) | ![学習トラッカー画面](./assets/catchup-feed-tracker.png) | ![学習ループのデモ(タップで答えを表示)](./assets/catchup-feed-review.gif) |
+| ソース管理(RSS / YouTube / Podcast) | 学習トラッカー(spaced repetition) |
+|---|---|
+| ![ソース管理画面](./assets/catchup-feed-sources.png) | ![学習トラッカー画面](./assets/catchup-feed-tracker.png) |
 
 **技術的なポイント:**
 
