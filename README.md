@@ -90,7 +90,6 @@ Claude Codeのサブエージェント機能を活用し、**7フェーズ・49�
 | **技術** | Claude Code Subagent, Prompt Engineering |
 | **特徴** | 7フェーズ品質ゲート、自己適応型アーキテクチャ(技術スタック自動検出) |
 | **対応** | 11言語、50+フレームワーク |
-| **実績** | Rails 6.1→8.1 + webpacker→esbuild移行を約1.5時間で完了(196ファイル変更、JSバンドル76%削減) |
 
 <details>
 <summary><b>技術的なポイント</b></summary>
