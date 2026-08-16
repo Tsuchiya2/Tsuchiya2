@@ -47,7 +47,7 @@ RSS・YouTube・ポッドキャストから技術情報を自動収集し、LLM�
 *アーキテクチャ:*
 - クリーンアーキテクチャ(domain / usecase / repository / handler / infra)で管理APIを構成。依存方向の違反ゼロを `go list` で検証(handler→infraの直接参照0件、ドメイン層の外部依存0件・ORMタグなし)
 - 層で括るか用途で括るかをバイナリ単位で使い分け — バッチは用途別パッケージに切り、必要なメソッドだけを利用側で定義するGo流のポート(consumer-side interface)で抽象化。教科書からの逸脱は理由とともにドキュメント化
-- 単一ユーザーに右サイズした設計(初代のマイクロサービス・gRPC・Prometheus を「要件に対して過剰」と判断して撤去し、約3.8万行を削減)
+- 単一ユーザーに右サイズした設計(初代のマイクロサービス・gRPC・Prometheus を「要件に対して過剰」と判断して撤去し、253ファイル・差し引き約7万行を削減)
 - 縮退許容設計 — 「壊れない」より「壊れても翌日勝手に戻る」(Mac不在→エピソード欠番、無料API全滅→ローカルLLM、TTS障害→当日スキップ)
 - 固定費ゼロ運用 — LLMは無料枠→ローカルのフォールバック、ホスティングは自宅Pi 5 + Cloudflare Tunnel
 - プライバシー分界 — クラウドAPIに流すのは公開記事のみ、書籍・私的データはローカルLLM(Ollama)に限定
@@ -107,32 +107,51 @@ Claude Codeのサブエージェント機能を活用し、**7フェーズ・49�
 
 ---
 
-### 3. [ReLINE - 猫メッセンジャーBot](https://github.com/Tsuchiya2/cat_salvages_the_relationship)
+### 3. [ReLINE - 猫メッセンジャーBot](https://github.com/Tsuchiya2/ReLINE)
 
 ![ReLINE](./assets/reline-logo.webp)
 
 **休眠グループチャットを活性化するLINE Bot**
 
-![ReLINEの全体像(主な機能 / 休眠検知 → きっかけ配信 → 会話再開 → 効果可視化のフロー / Railsバックエンドのアーキテクチャ / 技術スタック)](./assets/reline-overview.webp)
+![ReLINEの全体像(主な機能 / 休眠検知 → きっかけ配信 → 会話再開 → 効果可視化のフロー / システムアーキテクチャ / 技術スタック)](./assets/reline-overview.webp)
 
-コロナ禍で連絡が途切れがちなグループに、かわいい猫のマスコットが会話のきっかけを自動配信。LINE Messaging APIを活用したイベント駆動アーキテクチャで実装しました。
+コロナ禍で連絡が途切れがちなグループに、かわいい猫のマスコットが会話のきっかけを自動配信。LINE Messaging APIのWebhookを単一エンドポイントで受け、イベントの振り分けと外部への送信を分離した構成で実装しました。独自レイヤーを積むのではなく、モデル・concern・ジョブというRails標準の置き場に収めています。
 
 | 項目 | 内容 |
 |------|------|
-| **技術** | Ruby 4.0.5 + Rails 8.1.3 + MySQL 8.0 |
-| **連携** | LINE Messaging API |
-| **テスト** | RSpec + Selenium(100%カバレッジ) |
-| **フロント** | Hotwire (Turbo + Stimulus) + Bootstrap 5 |
+| **バックエンド** | Ruby 4.0.5 + Rails 8.1.3 + MySQL 8.0 |
+| **連携** | LINE Messaging API(`line-bot-api` v2) |
+| **フロントエンド** | Hotwire (Turbo + Stimulus) + Bootstrap 5、インストール可能なPWA |
+| **テスト** | RSpec + Selenium(行・ブランチともに100%カバレッジ)、Jest(Service Worker) |
+| **運用** | ヘルスチェック / Prometheusメトリクス / 構造化ログ(lograge) |
 
 <details>
-<summary><b>技術的なポイント</b></summary>
+<summary><b>技術的なポイント</b>(アーキテクチャ / バックエンド / フロントエンド / 品質)</summary>
 
-- サービスオブジェクトによる責務分離(Fat Model/Controller回避)
-- ストラテジーパターンによる動的イベントハンドラー選択
-- Rack::Attackによるレート制限・ブルートフォース対策
-- Brakeman・bundler-auditによるセキュリティ監査
+*アーキテクチャ:*
+- 単一のWebhookエンドポイントでメッセージ・参加・退出・フォローの各イベントを処理。`CatLineBot`が振り分けに徹し、LINEへの送信は`LineReminderJob` / `LineWelcomeMessageJob`へ委譲することで、Webhookの応答時間を外部APIに引きずられないようにしています
+- SDK依存の局所化 — `Line::Bot::V2::*`に触れるのは`LineMessaging`だけに限定し、SDKのバージョン変更の影響範囲を1モジュールに閉じ込め(v1→v2移行もこの範囲で完結)
+- 失敗への備え — 通信エラーはActiveJobの`retry_on`で指数バックオフ再送。処理できなかったイベントは`ErrorSanitizer`で資格情報を伏せたうえで運用者へメール通知
+- 独自レイヤーを増やさない設計 — Rails標準の語彙(モデル / concern / ジョブ)に収め、Fat ControllerとFat Modelの両方を回避
+
+*バックエンド:*
+- 認証をSorceryからRails 8標準の`has_secure_password`へ移行し、`Authentication`(コントローラーconcern)と`BruteForceProtection`(モデルconcern)に集約
+- `pundit`によるポリシーベースの認可、`rack-attack`によるレート制限・ブルートフォース対策
+- 可観測性 — `/health`(liveness)・`/health/deep`(DB + ディスク)・`/health/ready`(readiness)と、Prometheus形式の`/metrics`(本番はBasic認証)を提供
+
+*フロントエンド:*
+- Service Workerのキャッシュ戦略(`cache-first` / `network-first` / `network-only`)を`StrategyRouter`がリクエストごとに振り分けるPWA
+- 戦略とマニフェストは`config/pwa_config.yml`へ外部化し`GET /api/pwa/config`で環境別に配信、マニフェストはI18n対応で動的生成
+- クライアント側のログ・メトリクスを`POST /api/client_logs` / `POST /api/metrics`で収集
+
+*品質:*
+- SimpleCovで行・ブランチともに100%を必須化(下回るとRSpecが失敗終了)
+- GitHub ActionsでRSpec(MySQL 8.0サービス)とRuboCopを実行し、`main`へのマージでリリースを自動作成
+- `brakeman`・`bundler-audit`によるセキュリティ監査
 
 </details>
+
+📐 [テストガイド](https://github.com/Tsuchiya2/ReLINE/blob/main/TESTING.md)(テスト構成・カバレッジ方針・CI)
 
 ---
 
@@ -152,6 +171,8 @@ Claude Codeのサブエージェント機能を活用し、**7フェーズ・49�
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=black)
 ![Next.js](https://img.shields.io/badge/-Next.js-000000?style=flat&logo=next.js&logoColor=white)
+![Hotwire](https://img.shields.io/badge/-Hotwire-FF6600?style=flat)
+![Bootstrap](https://img.shields.io/badge/-Bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white)
 
 **Infrastructure / DevOps**
 
