@@ -20,7 +20,7 @@ RSS・YouTube・ポッドキャストから技術情報を自動収集し、LLM�
 
 | 項目 | 内容 |
 |------|------|
-| **バックエンド** | Go 1.26(単一モジュール、server / worker / radio の3バイナリ構成) |
+| **バックエンド** | Go 1.27(単一モジュール、server / worker / radio の3バイナリ構成) |
 | **フロントエンド** | Next.js 16 + TypeScript (Strict) + TanStack Query(PWAダッシュボード) |
 | **AI / 音声** | 要約: Gemini → Groq → Ollama フォールバック連鎖 / TTS: VOICEVOX / 文字起こし: faster-whisper |
 | **インフラ** | Raspberry Pi 5 + M3 Mac(夜間バッチ)+ Cloudflare Tunnel + Tailscale + Vercel |
