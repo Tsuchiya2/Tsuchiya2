@@ -75,38 +75,7 @@ RSS・YouTube・ポッドキャストから技術情報を自動収集し、LLM�
 
 ---
 
-### 2. [EDAF - Evaluator-Driven Agent Flow](https://github.com/Tsuchiya2/evaluator-driven-agent-flow)
-
-![EDAF](./assets/edaf-logo.webp)
-
-**AIコード生成の品質を自動評価・保証する7フェーズ開発フレームワーク**
-
-![EDAFの全体像(7フェーズ開発フロー / Generate → Evaluate → Feedback → Improve の自己改善ループ / 40評価者による7カテゴリ評価)](./assets/edaf-overview.webp)
-
-Claude Codeのサブエージェント機能を活用し、**7フェーズ・49コンポーネント(9つの専門エージェント + 40の評価者)** による多層的な品質ゲートを実装。AIが生成したコードを自動的に評価・改善するサイクルを構築しました。
-
-| 項目 | 内容 |
-|------|------|
-| **技術** | Claude Code Subagent, Prompt Engineering |
-| **特徴** | 7フェーズ品質ゲート、自己適応型アーキテクチャ(技術スタック自動検出) |
-| **対応** | 11言語、50+フレームワーク |
-
-<details>
-<summary><b>技術的なポイント</b></summary>
-
-- 並列評価によるパフォーマンス最適化
-- サンドボックス実行による安全なコード評価
-- フィードバックループによる自動修正・再評価
-- 各フェーズの設計書・評価結果を自動でドキュメント化し、人間が最終判断できる状態を維持
-
-</details>
-
-📝 [EDAFの解説記事(Qiita)](https://qiita.com/Tsuchiya2/items/013a467c07286c6732f5)
-※解説記事は2025年12月時点の構成(5フェーズ・32エージェント)。現在は7フェーズ・49コンポーネントに拡張
-
----
-
-### 3. [ReLINE - 猫メッセンジャーBot](https://github.com/Tsuchiya2/ReLINE)
+### 2. [ReLINE - 猫メッセンジャーBot](https://github.com/Tsuchiya2/ReLINE)
 
 ![ReLINE](./assets/reline-logo.webp)
 
@@ -151,6 +120,37 @@ Claude Codeのサブエージェント機能を活用し、**7フェーズ・49�
 </details>
 
 📐 [テストガイド](https://github.com/Tsuchiya2/ReLINE/blob/main/TESTING.md)(テスト構成・カバレッジ方針・CI)
+
+---
+
+### 3. [EDAF - Evaluator-Driven Agent Flow](https://github.com/Tsuchiya2/evaluator-driven-agent-flow)
+
+![EDAF](./assets/edaf-logo.webp)
+
+**AIコード生成の品質を自動評価・保証する7フェーズ開発フレームワーク**
+
+![EDAFの全体像(7フェーズ開発フロー / Generate → Evaluate → Feedback → Improve の自己改善ループ / 40評価者による7カテゴリ評価)](./assets/edaf-overview.webp)
+
+Claude Codeのサブエージェント機能を活用し、**7フェーズ・49コンポーネント(9つの専門エージェント + 40の評価者)** による多層的な品質ゲートを実装。AIが生成したコードを自動的に評価・改善するサイクルを構築しました。
+
+| 項目 | 内容 |
+|------|------|
+| **技術** | Claude Code Subagent, Prompt Engineering |
+| **特徴** | 7フェーズ品質ゲート、自己適応型アーキテクチャ(技術スタック自動検出) |
+| **対応** | 11言語、50+フレームワーク |
+
+<details>
+<summary><b>技術的なポイント</b></summary>
+
+- 並列評価によるパフォーマンス最適化
+- サンドボックス実行による安全なコード評価
+- フィードバックループによる自動修正・再評価
+- 各フェーズの設計書・評価結果を自動でドキュメント化し、人間が最終判断できる状態を維持
+
+</details>
+
+📝 [EDAFの解説記事(Qiita)](https://qiita.com/Tsuchiya2/items/013a467c07286c6732f5)
+※解説記事は2025年12月時点の構成(5フェーズ・32エージェント)。現在は7フェーズ・49コンポーネントに拡張
 
 ---
 
